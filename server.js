@@ -3,7 +3,7 @@ const restify = require('restify');
 const restifyJWT = require('restify-jwt');
 const server = restify.createServer();
 const routes = require('./routes');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // We use redis in order to validate that secret JSON web token has been stored.
 // If we find it, we will ensure that JWT validation is made for every API call.
